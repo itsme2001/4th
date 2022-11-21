@@ -92,7 +92,7 @@ learning_rate = 1e-7
 #input Layer
 input_layer = tf.keras.layers.Input(shape=(input_dim, ))
 #Encoder
-encoder = tf.keras.layers.Dense(encoding_dim, activation="tanh",                                activity_regularizer=tf.keras.regularizers.l2(learning_rate))(input_layer)
+encoder = tf.keras.layers.Dense(encoding_dim, activation="tanh",activity_regularizer=tf.keras.regularizers.l2(learning_rate))(input_layer)
 encoder=tf.keras.layers.Dropout(0.2)(encoder)
 encoder = tf.keras.layers.Dense(hidden_dim1,activation='relu')(encoder)
 encoder = tf.keras.layers.Dense(hidden_dim2,activation=tf.nn.leaky_relu)(encoder)
